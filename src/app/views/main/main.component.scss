@@ -1,0 +1,338 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+
+.main {
+  margin-bottom: 120px;
+  .container {
+    .slider {
+      position: relative;
+
+      .slider-arrows {
+        display: flex;
+        a {
+          top: calc(50% - 14px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+          z-index: 2000;
+
+          &.move-backward {
+            left: 10px;
+          }
+          &.move-forward {
+            right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.offer {
+  margin-bottom: 120px;
+
+  .container {
+    .offer-header {
+      @include head-lora-38;
+      margin-bottom: 40px;
+
+    }
+    .offer-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .offer-item {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        width: 291px;
+
+        .offer-item-image {
+          width: 291px;
+          height: 291px;
+          background-position: center;
+          border-radius: 5px;
+          background-size: cover;
+          margin-bottom: 15px;
+        }
+
+        .offer-item-head {
+          color: $blue-text-color;
+          font-size: 20px;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+
+        .offer-item-text {
+          color: $base-text-color;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 130%;
+          height: 105px;
+        }
+
+        .offer-item-action {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .offer-item-action-price {
+            color: $blue-text-color;
+            font-size: 20px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+  margin-bottom: 120px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .about-info {
+      margin-left: 68px;
+
+      .about-info-header {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .about-info-text {
+        color: $base-text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        margin-bottom: 40px;
+        width: 633px;
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .about-info-advantages {
+        .about-info-advantages-title {
+          color: $blue-text-color;
+          font-family: 'Lora', sans-serif;
+          font-size: 26px;
+          font-weight: 400;
+          margin-bottom: 20px;
+        }
+
+        .about-info-advantages-items {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          .about-info-advantages-item {
+            display: flex;
+            justify-content: space-between;
+            margin-right: 45px;
+            margin-bottom: 20px;
+
+            .about-info-advantages-item-num {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 20px;
+              color: $blue-text-color;
+              font-family: 'Lora', sans-serif;
+              font-size: 50px;
+              font-weight: 500;
+              line-height: 57%;
+
+              span {
+                background-color: #B9D5FD;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                text-align: center;
+
+              }
+            }
+
+            .about-info-advantages-item-text {
+              color: $base-text-color;
+              font-family: 'Montserrat', sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 130%;
+              max-width: 250px;
+
+              span {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.blog {
+  margin-bottom: 120px;
+  .container {
+    .blog-header {
+      @include head-lora-38;
+      margin-bottom: 40px;
+    }
+
+    .blog-articles {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .block-link {
+      cursor: pointer;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      color: $blue-text-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+
+      span {
+        margin-left: 14px;
+      }
+    }
+  }
+}
+
+.reviews {
+  margin-bottom: 120px;
+  .container {
+    .reviews-header {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+
+      .review-item {
+        width: 396px;
+        height: 267px;
+        padding: 30px;
+        border-radius: 5px;
+        border: 2px solid #709FDC;
+        box-sizing: border-box;
+
+        .review-item-head {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .review-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 60%;
+            background-position: center;
+            background-size: cover;
+            margin-right: 26px;
+          }
+
+          .review-item-name {
+            color: $blue-text-color;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+
+        .review-item-text {
+          color: $base-text-color;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 140%;
+        }
+      }
+
+      .reviews-arrows {
+        display: flex;
+        div {
+          top: calc(50% - 5px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+          z-index: 2000;
+          width: 10px;
+          height: 19px;
+          background-position: center;
+          background-size: cover;
+
+
+          &.move-back {
+            left: -34px;
+          }
+          &.move-next {
+            right: -34px;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.contacts {
+  margin-bottom: 120px;
+  .container {
+    display: flex;
+    justify-content: flex-start;
+
+    .contacts-map {
+      margin-right: 26px;
+    }
+
+    .contacts-info {
+
+
+      .contacts-info-header {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .contacts-info-title {
+        color: $blue-text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+
+      .contacts-info-text {
+        color: $base-text-color;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 130%;
+        max-width: 500px;
+        margin-bottom: 20px;
+      }
+
+      .contacts-info-social {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .contacts-info-social-item {
+          a {
+            margin-right: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

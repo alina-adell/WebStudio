@@ -1,0 +1,58 @@
+<div class="popup-form" [formGroup]="orderForm">
+
+  <h2 mat-dialog-title *ngIf="!isConsult">Заявка на услугу</h2>
+  <h2 mat-dialog-title *ngIf="isConsult">Закажите бесплатную консультацию!</h2>
+  <a class="popup-form-close" mat-dialog-close>
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0.935622" y1="0.649994" x2="12.9564" y2="12.6708" stroke="#BEBEBE" stroke-linecap="round"/>
+      <line x1="12.9236" y1="0.629775" x2="0.902769" y2="12.6506" stroke="#BEBEBE" stroke-linecap="round"/>
+    </svg>
+  </a>
+
+  <div class="form-inputs">
+    <mat-select *ngIf="!isConsult" formControlName="title" class="input">
+      <mat-option class="drop-out" *ngFor="let title of titles" [value]="title.value">{{title.viewValue}}</mat-option>
+    </mat-select>
+
+    <input type="text" class="input" placeholder="Ваше имя"
+           [ngStyle]="{'border-color': orderForm.get('name')?.invalid
+                         && (orderForm.get('name')?.dirty || orderForm.get('name')?.touched) ? 'red' : ''}"
+           formControlName="name">
+
+    <div class="auth-error-text" *ngIf="orderForm.get('name')?.invalid
+                 && (orderForm.get('name')?.dirty || orderForm.get('name')?.touched)">
+      В имени могут быть только буквы кириллицей. Первая - заглавная.</div>
+
+    <input type="text" class="input" placeholder="Ваш номер телефона"
+           [ngStyle]="{'border-color': orderForm.get('phone')?.invalid
+                         && (orderForm.get('phone')?.dirty || orderForm.get('phone')?.touched) ? 'red' : ''}"
+           formControlName="phone">
+
+    <div class="auth-error-text" *ngIf="orderForm.get('phone')?.invalid
+                 && (orderForm.get('phone')?.dirty || orderForm.get('phone')?.touched)">
+      В телефоне могут быть только цифры, пробел, -().</div>
+
+  </div>
+  <button class="button" *ngIf="!isConsult" [disabled]="orderForm.invalid" (click)="sendRequest()">Оставить заявку
+  </button>
+  <button class="button" *ngIf="isConsult" [disabled]="orderForm.invalid" (click)="sendRequest()">Заказать консультацию
+  </button>
+  <div class="show-error" *ngIf="isError">Произошла ошибка при отправке формы, попробуйте еще раз</div>
+</div>
+
+<ng-template #thankYouPage>
+  <div class="thank-you-page">
+    <div class="thank-you-page-close" (click)="closeThankYouPage()">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0.935622" y1="0.649902" x2="12.9564" y2="12.6707" stroke="#A8ABA7" stroke-linecap="round"/>
+        <line x1="12.9238" y1="0.629714" x2="0.903013" y2="12.6505" stroke="#A8ABA7" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="thank-you-page-title">Благодарим за заказ!</div>
+    <div class="thank-you-page-content">
+      <div class="thank-you-page-text">Мы свяжемся с вами при первой же возможности.</div>
+      <button class="button" (click)="closeThankYouPage()">Окей</button>
+    </div>
+  </div>
+</ng-template>
+

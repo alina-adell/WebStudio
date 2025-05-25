@@ -1,0 +1,108 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.catalog {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  .container {
+
+    .catalog-title {
+      @include head-lora-38;
+      margin-bottom: 40px;
+    }
+
+    .catalog-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      min-height: 45px;
+      margin-bottom: 45px;
+
+      .catalog-applied-filters {
+        display: flex;
+        flex-wrap: wrap;
+
+        .catalog-applied-filter {
+          box-sizing: border-box;
+          border: 2px solid $blue-text-color;
+          border-radius: 5px;
+          padding: 8px 20px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          color: $blue-text-color;
+          display: flex;
+          align-items: center;
+          margin-right: 10px;
+          margin-bottom: 3px;
+
+          a {
+            text-decoration: none;
+            cursor: pointer;
+            margin-left: 8px;
+            display: flex;
+          }
+        }
+      }
+
+    }
+
+    .catalog-items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px 24px;
+    }
+
+    .pagination {
+      margin-top: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .pagination-arrow {
+
+        svg {
+          cursor: pointer;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+
+          &.disabled {
+            path {
+              stroke: #D9D9D9;
+            }
+          }
+        }
+      }
+
+      .pagination-pages {
+        margin-left: 40px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+
+        a.pagination-page {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          width: 28px;
+          margin-right: 20px;
+          font-family: "Montserrat", sans-serif;
+          font-weight: 400;
+          font-size: 20px;
+          text-align: center;
+          color: #071739;
+          cursor: pointer;
+
+          &.active {
+            color: #b9d5fd;
+          }
+        }
+      }
+    }
+  }
+}

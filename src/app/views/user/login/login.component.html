@@ -1,0 +1,48 @@
+<section class="login" [formGroup]="loginForm">
+  <div class="container">
+    <div class="auth-form">
+      <div class="auth-title">
+        Войти в личный кабинет
+      </div>
+      <div class="auth-inputs">
+        <div class="auth-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color': loginForm.get('email')?.invalid
+                 && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched) ? 'red' : ''}"
+                 placeholder="Электронная почта" formControlName="email">
+        </div>
+        <div class="auth-error-text" *ngIf="loginForm.get('email')?.invalid
+                 && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)">Введите правильный e-mail
+        </div>
+        <div class="auth-input password-input-container">
+          <input [type]="passwordType" class="input"
+                 [ngStyle]="{'border-color': loginForm.get('password')?.invalid
+                 && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched) ? 'red' : ''}"
+                 placeholder="Пароль" formControlName="password">
+          <button type="button" class="toggle-password-visibility" (click)="togglePasswordVisibility()">
+            <img *ngIf="passwordType === 'password'" src="assets/images/icons/eye-closed.svg" alt="Показать">
+            <img *ngIf="passwordType === 'text'" src="assets/images/icons/eye-open.svg" alt="Скрыть">
+          </button>
+        </div>
+        <div class="auth-error-text" *ngIf="loginForm.get('password')?.invalid
+                 && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">Пароль не должен быть пустым
+        </div>
+        <div class="auth-checkbox">
+          <input type="checkbox" id="remember" formControlName="rememberMe">
+          <label for="remember">Запомнить меня</label>
+        </div>
+
+        <div class="auth-button">
+          <button class="button" [disabled]="loginForm.invalid" (click)="login()">Войти</button>
+        </div>
+        <div class="auth-link">
+          Нет аккаунта? <a routerLink="/signup">Пройдите регистрацию</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-image">
+      <img src="assets/images/login-image.png" alt="login">
+    </div>
+  </div>
+</section>

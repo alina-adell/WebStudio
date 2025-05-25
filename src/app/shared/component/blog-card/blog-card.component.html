@@ -1,0 +1,15 @@
+<div class="blog-card" *ngIf="article">
+  <span>{{article.category}}</span>
+  <div class="blog-card-image" style="background-image: url('assets/images/articles/{{article.image}}')"></div>
+  <div class="blog-card-info">
+    <div class="blog-card-info-title">
+      {{article.title}}
+    </div>
+    <div class="blog-card-info-text">
+      {{article.description}}
+    </div>
+  </div>
+  <div class="blog-card-link">
+    <a [routerLink]="'/catalog/' + article.url">Читать дальше</a>
+  </div>
+</div>

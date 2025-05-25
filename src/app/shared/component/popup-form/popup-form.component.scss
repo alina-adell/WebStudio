@@ -1,0 +1,96 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/auth-form";
+
+
+.popup-form, .thank-you-page {
+  width: 727px;
+  text-align: center;
+  position: relative;
+
+  .thank-you-page-close {
+    position: absolute;
+    right: 30px;
+    top: -133px;
+    cursor: pointer;
+  }
+
+  .popup-form-close svg {
+    position: absolute;
+    right: 30px;
+    top: -64px;
+    cursor: pointer;
+  }
+
+  h2 {
+    @include head-lora-38;
+    margin-top: 94px;
+    margin-bottom: 20px;
+  }
+
+  .thank-you-page-title {
+    @include head-lora-38;
+    margin-top: 163px;
+    margin-bottom: 20px;
+  }
+
+  .thank-you-page-content {
+    .thank-you-page-text {
+      margin-bottom: 40px;
+    }
+
+    button.button {
+      width: 73px;
+      margin-bottom: 163px;
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+  }
+
+
+
+  .form-inputs {
+    margin-bottom: 15px;
+
+    input, mat-select {
+      mat-option.drop-out {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      margin-bottom: 5px;
+      padding: 17px 20px;
+      width: 422px;
+      height: 56px;
+      border-radius: 3px;
+      color: $blue-text-color;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: left;
+
+    }
+    .auth-error-text {
+      margin-bottom: 5px;
+      color: red;
+      font-size: 14px;
+      line-height: 100%;
+    }
+  }
+
+  button.button {
+    width: 422px;
+    margin-bottom: 86px;
+    font-size: 16px;
+  }
+
+  .show-error {
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 105px;
+    color: red;
+  }
+
+}

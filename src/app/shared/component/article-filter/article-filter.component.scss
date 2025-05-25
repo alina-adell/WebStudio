@@ -1,0 +1,75 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.catalog-filter {
+  width: 148px;
+  box-sizing: border-box;
+  text-align: left;
+  position: relative;
+  font-size: 16px;
+  padding: 0;
+
+
+
+  .catalog-filter-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+
+    span {
+      margin-right: 8px;
+    }
+  }
+
+  .catalog-filter-body {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    z-index: 3;
+    display: none;
+    border: 2px solid #b9d5fd;
+    border-radius: 0 0 5px 5px;
+    padding: 13px 23px;
+    color: #bebebe;
+    background: #fff;
+
+    .catalog-filter-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      cursor: pointer;
+      height: 45px;
+
+      span {
+        font-size: 24px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.active {
+        color: #071739;
+      }
+
+    }
+
+  }
+
+  &.open {
+    width: 257px;
+
+    .catalog-filter-head {
+      border-radius: 5px 5px 0 0;
+      background: #b9d5fd;
+      box-sizing: border-box;
+      padding: 13px 23px;
+    }
+    .catalog-filter-body {
+      display: block;
+    }
+  }
+
+}

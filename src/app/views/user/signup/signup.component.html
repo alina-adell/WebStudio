@@ -1,0 +1,57 @@
+<section class="signup" [formGroup]="signupForm">
+  <div class="container">
+    <div class="auth-form">
+      <div class="auth-title">
+        Регистрация на сайте
+      </div>
+      <div class="auth-inputs">
+        <div class="auth-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color': signupForm.get('name')?.invalid
+                 && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched) ? 'red' : ''}"
+                 placeholder="Ваше имя" formControlName="name">
+        </div>
+        <div class="auth-error-text" *ngIf="signupForm.get('name')?.invalid
+                 && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)">
+          Только буквы, кириллица. Первая - заглавная.</div>
+
+        <div class="auth-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color': signupForm.get('email')?.invalid
+                 && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched) ? 'red' : ''}"
+                 placeholder="Электронная почта" formControlName="email">
+        </div>
+        <div class="auth-error-text" *ngIf="signupForm.get('email')?.invalid
+                 && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched)">
+          Введите правильный e-mail</div>
+
+        <div class="auth-input">
+          <input type="password" class="input"
+                 [ngStyle]="{'border-color': signupForm.get('password')?.invalid
+                 && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched) ? 'red' : ''}"
+                 placeholder="Пароль" formControlName="password">
+        </div>
+        <div class="auth-error-text" *ngIf="signupForm.get('password')?.invalid
+                 && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched)">
+          От 8 символов, латиница, с цифрой, одна буква - прописная</div>
+
+        <div class="auth-checkbox">
+          <input type="checkbox" id="agree" formControlName="agree">
+          <label for="agree">
+            Я принимаю <a href="#">условия пользовательского соглашения</a>  и даю <a href="#">согласие на обработку персональных данных.</a>
+          </label>
+        </div>
+        <div class="auth-button">
+          <button class="button" [disabled]="signupForm.invalid" (click)="signup()">Зарегистрироваться</button>
+        </div>
+        <div class="auth-link">
+          Уже есть аккаунт? <a routerLink="/login">Войдите</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-image">
+      <img src="assets/images/signup-image.png" alt="login">
+    </div>
+  </div>
+</section>

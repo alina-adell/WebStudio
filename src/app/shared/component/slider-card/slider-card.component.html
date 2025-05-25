@@ -1,0 +1,19 @@
+<div class="slider-item" *ngIf="banner">
+  <div class="slider-item-offer">
+    <div class="slider-item-pre-title">
+      {{banner.preTitle}}
+    </div>
+<!--    <div class="slider-item-title" [innerHTML]="banner.title"></div>-->
+    <div class="slider-item-title" [innerHTML]="sanitizeHtml(banner.title)"></div>
+<!--    <div class="slider-item-title">Продвижение в Instagram для вашего бизнеса <span>-15%</span>!</div>-->
+    <div class="slider-item-text">
+      {{banner.text}}
+    </div>
+    <div class="slider-item-action">
+      <button class="button" (click)="openDialog(banner.consultType)">Подробнее</button>
+    </div>
+  </div>
+  <div class="circle">
+  </div>
+  <div class="image" style="background-image: url('assets/images/banner/{{banner.image}}')"></div>
+</div>

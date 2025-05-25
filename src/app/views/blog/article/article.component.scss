@@ -1,0 +1,276 @@
+@import "../../../../assets/styles/mixins";
+@import "../../../../assets/styles/variables";
+
+.no-data {
+  color: red;
+  text-align: center;
+  min-height: 500px;
+
+}
+.article {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  .container {
+
+    .article-breadcrumbs {
+      margin-bottom: 60px;
+      a {
+        font-size: 16px;
+        color: #b9d5fd;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      font-weight: 500;
+      font-size: 16px;
+      color: $blue-text-color;
+    }
+
+    .article-head {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+
+      .article-head-title {
+        margin-bottom: 60px;
+
+        h1 {
+          @include head-lora-38;
+          line-height: 130%;
+          width: 607px;
+          margin-bottom: 40px;
+        }
+
+        .article-head-about {
+          width: 607px;
+          font-size: 20px;
+          line-height: 130%;
+          color: $blue-text-color;
+
+        }
+      }
+
+      .article-head-image {
+        width: 527px;
+        height: 320px;
+        background-position: center;
+        background-size: cover;
+      }
+    }
+
+    .article-main-block {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 60px;
+
+      .article-body {
+        .article-body-text {
+          width: 818px;
+          font-size: 14px;
+          line-height: 130%;
+          color: $base-text-color;
+
+          h1, h3 {
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 130%;
+            color: $blue-text-color;
+          }
+        }
+
+        .article-share {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          margin-bottom: 60px;
+          margin-top: 60px;
+
+          span {
+            font-size: 14px;
+            color: $blue-text-color;
+            margin-right: 20px;
+          }
+
+          .article-share-icons {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            cursor: pointer;
+
+            svg {
+              margin-right: 14px;
+            }
+          }
+        }
+
+        .article-comments {
+          width: 818px;
+
+          .article-comments-head {
+            @include head-lora-38;
+            margin-bottom: 20px;
+          }
+
+          .article-comments-reg {
+            font-size: 14px;
+            color: $base-text-color;
+            margin-bottom: 60px;
+
+            a {
+              color: $blue-text-color;
+            }
+          }
+
+          .article-comments-add {
+            margin-top: 40px;
+            margin-bottom: 60px;
+
+
+            textarea {
+              border: 1.50px solid $blue-text-color;
+              border-radius: 3px;
+              padding: 20px 64px 20px 20px;
+              width: 818px;
+              height: 248px;
+              font-family: "Montserrat", sans-serif;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 130%;
+              margin-bottom: 20px;
+              resize: none;
+
+              ::placeholder {
+                color: #a8aba7;
+              }
+            }
+          }
+          .article-comments-items {
+            .article-comments-item {
+              margin-bottom: 40px;
+
+              .article-comments-item-head {
+                display: flex;
+                justify-content: left;
+
+                .article-comments-item-head-ava {
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                  background-color: #b9d5fd;
+                  border: 2px solid #709fdc;
+                  margin-right: 26px;
+                  background-position: center;
+                  background-size: cover;
+                  margin-bottom: 15px;
+
+                }
+
+                .article-comments-item-head-name {
+                  display: flex;
+                  flex-direction: column;
+                  margin-bottom: 15px;
+
+                  .name {
+                    font-weight: 600;
+                    font-size: 18px;
+                    color: $blue-text-color;
+                    margin-bottom: 10px;
+                  }
+
+                  .date {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #bebebe;
+                  }
+                }
+              }
+
+              .article-comments-item-text {
+                font-size: 14px;
+                line-height: 140%;
+                color: $base-text-color;
+                margin-bottom: 40px;
+              }
+
+              .article-comments-item-reactions {
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                font-weight: 600;
+                font-size: 14px;
+                color: $base-text-color;
+
+                .article-comments-item-reactions-item {
+                  cursor: pointer;
+                  display: flex;
+                  align-items: center;
+                  margin-right: 15px;
+
+                  span {
+                    margin-right: 3px;
+                  }
+
+
+                  &.active {
+                    span {
+                      color: #709fdc;
+                    }
+                    svg {
+                      path {
+                        stroke: #709FDC;
+                      }
+                    }
+                  }
+
+                }
+
+              }
+            }
+          }
+
+
+          .article-comments-more {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            cursor: pointer;
+
+            span {
+              font-weight: 500;
+              font-size: 20px;
+              color: $blue-text-color;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      .article-body-more {
+        margin-top: 60px;
+
+        p {
+          font-family: "Lora", sans-serif;
+          font-weight: 400;
+          font-size: 26px;
+          line-height: 130%;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .article-body-more-articles {
+          display: flex;
+          flex-direction: column;
+
+          blog-card {
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+
