@@ -46,7 +46,7 @@ export class AuthService {
 
   signup( email: string, password: string): Observable<DefaultResponseType | LoginResponseType> {
     return this.http.post<DefaultResponseType | LoginResponseType>(environment.api + 'signup', {
-       email, password,  passwordRepeat: password
+       email, password
     })
   }
 

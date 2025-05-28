@@ -22,14 +22,14 @@ export class SignupComponent {
   }
 
   signupForm = this.fb.group({
-    name: ['', [ Validators.pattern(/^(?:[А-ЯЁ][а-яё]*\s?)+$/)]],
+    name: ['', [Validators.required, Validators.pattern(/^(?:[А-ЯЁ][а-яё]*\s?)+$/)]],
     email: ['', [Validators.email, Validators.required]],
     password: ['', [Validators.required, Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)]],
     agree: [false, [Validators.requiredTrue]]
   })
 
   signup() {
-    if (this.signupForm.valid && this.signupForm.value.email && this.signupForm.value.password
+    if (this.signupForm.valid && this.signupForm.value.name && this.signupForm.value.email && this.signupForm.value.password
        && this.signupForm.value.agree ) {
       this.authService.signup(this.signupForm.value.email, this.signupForm.value.password)
         .subscribe({

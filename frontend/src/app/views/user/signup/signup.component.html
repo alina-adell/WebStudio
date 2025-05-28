@@ -11,9 +11,14 @@
                  && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched) ? 'red' : ''}"
                  placeholder="Ваше имя" formControlName="name">
         </div>
-        <div class="auth-error-text" *ngIf="signupForm.get('name')?.invalid
-                 && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)">
-          Только буквы, кириллица. Первая - заглавная.</div>
+        <div class="auth-error-text"
+             *ngIf="signupForm.get('name')?.errors?.['required'] && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)">
+          Поле обязательно для заполнения.
+        </div>
+        <div class="auth-error-text"
+             *ngIf="signupForm.get('name')?.errors?.['pattern'] && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched)">
+          Только буквы, кириллица. Первая - заглавная.
+        </div>
 
         <div class="auth-input">
           <input type="text" class="input"
